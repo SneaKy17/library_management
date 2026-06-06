@@ -17,3 +17,14 @@ venv/
 Thumbs.db
 node_modules/
 *.pyc
+
+# Debug & diagnostic scripts
+diag.py
+import_check.py
+import_check2.py
+debug_ctrl.sh
+debug_hooks.sh
+fix_modules.sh
+temp_assets.json
+assets_clean/
+library_management/diag_hooks.py

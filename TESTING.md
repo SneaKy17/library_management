@@ -2,14 +2,14 @@
 
 **Author**: Nikhil Saklani  
 **App**: `library_management`  
-**ERPNext Version**: v15  
+**ERPNext Version**: v16  
 **Date**: 2024-01-01  
 
 ---
 
 ## Test Environment
 
-- ERPNext Version: v15
+- ERPNext Version: v16
 - Site: `library.localhost`
 - Browser: Chrome / Firefox
 - Tested by: Nikhil Saklani
@@ -336,9 +336,9 @@
 
 ---
 
-### Test 3.2: Issue Without Due Date
+### Test 3.2: Due Date Auto-Set on Issue
 
-**Objective**: Verify Issue transaction requires a Due Date.
+**Objective**: Verify that `due_date` is automatically set to transaction date + 14 days when left blank.
 
 **Prerequisites**:
 - Active member and available book
@@ -350,15 +350,16 @@
 4. Click **Save**
 
 **Expected Result**:
-- Validation error: "Due Date is mandatory for Issue transactions"
+- Transaction saves successfully
+- `due_date` is auto-populated to transaction date + 14 days
 
 **Actual Result**:
-- ✅ Error shown as expected
-- ✅ Document not saved
+- ✅ Transaction saved without error
+- ✅ `due_date` auto-set to today + 14 days
 
 **Status**: ✅ Pass
 
-**Screenshot**: `12_issue_no_due_date.png`
+**Screenshot**: `12_issue_due_date_auto.png`
 
 ---
 
@@ -389,9 +390,9 @@
 
 ---
 
-### Test 3.4: Return Without Return Date
+### Test 3.4: Return Date Auto-Set on Return
 
-**Objective**: Verify Return transaction requires a Return Date.
+**Objective**: Verify that `return_date` is automatically set to today when left blank on a Return transaction.
 
 **Prerequisites**:
 - Active member and book
@@ -403,15 +404,16 @@
 4. Click **Save**
 
 **Expected Result**:
-- Validation error: "Return Date is mandatory for Return transactions"
+- Transaction saves successfully
+- `return_date` is auto-populated to today's date
 
 **Actual Result**:
-- ✅ Error shown as expected
-- ✅ Document not saved
+- ✅ Transaction saved without error
+- ✅ `return_date` auto-set to today
 
 **Status**: ✅ Pass
 
-**Screenshot**: `14_return_no_date.png`
+**Screenshot**: `14_return_date_auto.png`
 
 ---
 

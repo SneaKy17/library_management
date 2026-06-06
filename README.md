@@ -58,20 +58,29 @@ Open http://localhost:8080 and login with `Administrator` / `admin`
 
 ```
 library_management/
-├── library_management/
+├── library_management/              # App package
 │   ├── __init__.py
-│   ├── hooks.py              # App configuration & hooks
-│   ├── modules.txt           # Module declarations
-│   └── doctype/
-│       ├── library_member/
-│       │   ├── library_member.json   # DocType schema
-│       │   └── library_member.py    # Controller
-│       ├── book/
-│       │   ├── book.json
-│       │   └── book.py
-│       └── book_transaction/
-│           ├── book_transaction.json
-│           └── book_transaction.py
+│   ├── hooks.py                     # App configuration & hooks
+│   ├── modules.txt                  # Module declarations
+│   ├── tasks.py                     # Scheduled background jobs
+│   ├── seed_data.py                 # Sample data seeder
+│   ├── create_workspace.py          # Workspace setup script
+│   └── library_management/          # Module directory (matches modules.txt)
+│       ├── __init__.py
+│       └── doctype/
+│           ├── __init__.py
+│           ├── library_member/
+│           │   ├── library_member.json   # DocType schema
+│           │   ├── library_member.py     # Controller
+│           │   └── test_library_member.py
+│           ├── book/
+│           │   ├── book.json
+│           │   ├── book.py
+│           │   └── test_book.py
+│           └── book_transaction/
+│               ├── book_transaction.json
+│               ├── book_transaction.py
+│               └── test_book_transaction.py
 ├── setup.py
 ├── requirements.txt
 └── README.md
