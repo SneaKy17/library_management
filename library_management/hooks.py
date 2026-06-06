@@ -52,21 +52,10 @@ fixtures = []
 
 # Scheduled Tasks
 # ---------------
+# Runs mark_overdue_transactions every day to flag past-due book issues.
 
-# scheduler_events = {
-# 	"all": [
-# 		"library_management.tasks.all"
-# 	],
-# 	"daily": [
-# 		"library_management.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"library_management.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"library_management.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"library_management.tasks.monthly"
-# 	]
-# }
+scheduler_events = {
+	"daily": [
+		"library_management.tasks.mark_overdue_transactions"
+	]
+}
